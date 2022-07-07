@@ -41,6 +41,7 @@ public class MemberListServlet extends HttpServlet {
         w.write(" </thead>");
         w.write(" <tbody>");
 
+        //java의 for each
         for (Member member : members) {
             w.write(" <tr>");
             w.write(" <td>" + member.getId() + "</td>");
