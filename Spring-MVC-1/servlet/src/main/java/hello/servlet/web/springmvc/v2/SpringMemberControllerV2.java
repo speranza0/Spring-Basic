@@ -28,18 +28,18 @@ public class SpringMemberControllerV2 {
         Member member = new Member(username, age);
         memberRepository.save(member);
 
-        ModelAndView mv = new ModelAndView("save-result");
+        ModelAndView mav = new ModelAndView("save-result");
         // mv.getModel().put("member", member);
-        mv.addObject("member", member); // 위와 같다
-        return mv;
+        mav.addObject("member", member); // 위와 같다
+        return mav;
     }
 
     @RequestMapping
     public ModelAndView members() {
         List<Member> members = memberRepository.findAll();
-        ModelAndView mv = new ModelAndView("members");
+        ModelAndView mav = new ModelAndView("members");
         //mv.getModel().put("members", members);
-        mv.addObject("members", members); // 위와 같다
-        return mv;
+        mav.addObject("members", members); // 위와 같다
+        return mav;
     }
 }
